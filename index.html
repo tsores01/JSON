@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSON</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+music = [
+  {
+   'Art'  : 'Tupac',
+   'Title' : 'Dear Mama',
+   'Genre'  : 'Rap',
+   'Release'   : '1995',
+  },
+  {
+   'Art' : 'Tupac',
+   'Title'  : 'Hail Mary',
+   'Genre'  : 'Rap',
+   'Release'   : '1996',
+  },
+  {
+   'Art' : 'Tupac',
+   'Title'  : 'Life Goes On',
+   'Genre'  : 'Rap',
+   'Release'   : '1996',
+  },
+  {
+   'Art' : 'Tupac',
+   'Title'  : 'Nothing to Lose',
+   'Genre'  : 'Rap',
+   'Release'   : '1997',
+  },
+  {
+   'Art' : 'Coldplay',
+   'Title'  : 'The Scientist',
+   'Genre'  : 'Rock',
+   'Release'   : '2002',
+  },
+  {
+   'Art' : 'Coldplay',
+   'Title'  : 'Clocks',
+   'Genre'  : 'Rock',
+   'Release'   : '2003',
+  },
+  {
+   'Art' : 'Coldplay',
+   'Title'  : 'Fix You',
+   'Genre'  : 'Rock',
+   'Release'   : '2005',
+  },
+  {
+   'Art' : 'Johnny Cash',
+   'Title'  : 'Ring of Fire',
+   'Genre'  : 'Rock, Country',
+   'Release'   : '1963',
+  },
+  {
+   'Art' : 'Johnny Cash',
+   'Title'  : 'Papa Was a Good Man',
+   'Genre'  : 'Rock, Country',
+   'Release'   : '1971',
+  },
+  {
+   'Art' : 'Johnny Cash',
+   'Title'  : 'Ghost Riders in the Sky',
+   'Genre'  : 'Rock, Country',
+   'Release'   : '1978',
+  },
+  {
+   'Art' : 'Johnny Cash',
+   'Title'  : 'Hurt',
+   'Genre'  : 'Rock, Country',
+   'Release'   : '2003',
+  }
+ ]
+
+rawstring = JSON.stringify(music);
+document.write(rawstring + "<br><br>");
+
+for(i = 0; i < 11; i++) {
+ document.write (music[i]["Title"] + "<br>");
+ document.write ("Artist: " + music[i]["Art"] + "<br>");
+ document.write ("Genre: " + music[i]["Genre"] + "<br>");
+ document.write ("Released: " + music[i]["Release"] + "<br>");
+ document.write ("<br>");
+}
+document.write("<br>");
+
+function pick() {
+ user = usergenre.value;
+ for(i = 0; i < 11; i++) {
+  if (user == music[i]["Genre"]) {
+   document.write (music[i]["Title"] + "<br>");
+   document.write ("Artist: " + music[i]["Art"] + "<br>");
+   document.write ("Genre: " + music[i]["Genre"] + "<br>");
+   document.write ("Released: " + music[i]["Release"] + "<br>");
+   document.write ("<br>");
+  } else if (user == "Rock" && music[i]["Genre"] == "Rock, Country") {
+   document.write (music[i]["Title"] + "<br>");
+   document.write ("Artist: " + music[i]["Art"] + "<br>");
+   document.write ("Genre: " + music[i]["Genre"] + "<br>");
+   document.write ("Released: " + music[i]["Release"] + "<br>");
+   document.write ("<br>");
+  } else if (user == "Country" && music[i]["Genre"] == "Rock, Country") {
+   document.write (music[i]["Title"] + "<br>");
+   document.write ("Artist: " + music[i]["Art"] + "<br>");
+   document.write ("Genre: " + music[i]["Genre"] + "<br>");
+   document.write ("Released: " + music[i]["Release"] + "<br>");
+   document.write ("<br>");
+  }
+ }
+}
+
+</script>
+
+<form>
+
+ <select name='usergenre' id= 'usergenre'>
+ <option value = 'Rap'> Rap </option>
+ <option value = 'Rock'> Rock </option>
+ <option value = 'Country'> Country </option>
+ </select>
+
+ <input type="button" value="Select a Genre" onclick="pick()">
+
+</form>
+</body>
+</html>
